@@ -25,7 +25,9 @@ $('.row').each(function () {
 });
 
 $('.row').each(function () {
-    let $saveBtnEl = $(this).children('saveBtn')
-    let $scheduleInfo = $(this).children('description').val()
-    $saveBtnEl.click(console.log($scheduleInfo))
+    let $saveBtnEl = $(this).children[2]
+   // let $scheduleInfo = $(this).children[1].val
+   // $saveBtnEl.click(console.log($scheduleInfo))
+    console.log(this.children[1].value)
+    console.log(this.children[2]);
 })
