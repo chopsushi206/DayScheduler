@@ -26,6 +26,6 @@ $('.row').each(function () {
 
 $('.row').each(function () {
     let $saveBtnEl = $(this).children('saveBtn')
-    let $scheduleInfo = $(this).children('description').val
+    let $scheduleInfo = $(this).children('description').val()
     $saveBtnEl.click(console.log($scheduleInfo))
 })
