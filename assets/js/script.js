@@ -1,3 +1,5 @@
+$(document).ready(function () {
+
 // variable to set moment to format Tuesday, March 1st 2021
 const now = moment().format('dddd MMMM Do YYYY');
 // variable to set moment in format of the hour, in a 24 hour span. (01-24)
@@ -24,10 +26,15 @@ $('.row').each(function () {
     }
 });
 
-$('.row').each(function () {
-    let $saveBtnEl = $(this).children[2]
-   // let $scheduleInfo = $(this).children[1].val
-   // $saveBtnEl.click(console.log($scheduleInfo))
-    console.log(this.children[1].value)
-    console.log(this.children[2]);
+// click event
+$('.saveBtn').click(function() {
+    // get the sibling value of textarea with class description
+       let scheduleContent = $(this).siblings('.description').val()
+    // gets parent dataset
+       let scheduleHour = $(this).parent('div').data('hour')
+       console.log(scheduleContent)
+    // stores both values into local storage
+       localStorage.setItem(scheduleHour, scheduleContent);
+   })
+
 })
